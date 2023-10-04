@@ -5,14 +5,14 @@
   "author": "mfrachet <marvin.frachet@zenika.com>",
   "license": "MIT",
   "scripts": {
-    "build": "rm -rf build/ && parcel build index.js -d build/",
-    "start": "rm -rf .cache && rm -rf dist && parcel serve index.html",
+    "build": "del build/ && parcel build index.js -d build/",
+    "start": "del .cache && del dist && parcel serve index.html",
     "docs": "vuepress dev book",
-    "build:docs": "vuepress build book && rm -rf ./docs && mv ./book/.vuepress/dist ./docs"
+    "build:docs": "vuepress build book && del ./docs && mv ./book/.vuepress/dist ./docs"
   },
   "dependencies": {
     "parcel-bundler": "^1.12.4",
-    "snabbdom": "^0.7.1"
+    "snabbdom": "^3.5.1"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
